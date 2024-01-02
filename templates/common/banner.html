@@ -2,6 +2,9 @@
      th:fragment="banner"
      class="banner"
      th:style="${'background-image: url(' + theme.config.basic_style.banner_image + ')'}">
+<th:block th:if="${theme.config.basic_style.enable_banner_video}">
+<video th:src="${theme.config.basic_style.banner_video}" style="object-fit:cover;width:inherit;height:inherit;" autoplay loop muted></video>
+</th:block>
     <div class="banner-info">
         <div class="banner-info-title" th:text="${site.title}"></div>
         <div class="banner-info-desc" th:text="${theme.config.basic_style.banner_description}"></div>
